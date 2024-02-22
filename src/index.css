@@ -3,32 +3,169 @@
   line-height: 1.5;
   font-weight: 400;
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-#root{
+#root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
 }
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
-a:hover {
-  color: #535bf2;
+.main {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 10px;
+}
+/* dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  float: right;
+  text-align: start;
 }
 
-body {
-  margin: 0;
+.dropdown ul {
+  padding: 10px;
+}
+.dropdown ul p {
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+}
+.dropdown ul > li {
+  margin-left: 10px;
+  line-height: 50px;
+  text-transform: capitalize;
+}
+.dropdown input[type="checkbox"] {
+  cursor: pointer;
+  position: relative;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 16px;
+  height: 16px;
+  background-color: #ffffff; /* Background color of the checkbox */
+  border: 1px solid #555; /* Border color of the checkbox */
+  outline: none;
+  cursor: pointer;
+  vertical-align: middle;
+  border-radius: 2px;
+}
+input[type="checkbox"]:checked::before {
+  content: "\2713";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  line-height: 16px; /* Adjust to vertically center the checkmark */
+  color: #fff; /* Color of the checkmark */
+  background-color: #ff007b; /* Background color when checked */
+}
+.dropdown input[type="checkbox"] + label {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.dropbtn {
+  background: none;
+  color: #000;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  min-width: 250px;
+  overflow: auto;
+  z-index: 1;
+  position: absolute;
+  right: 0;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.show {
+  display: block;
+}
+
+.table-section {
+  margin-top: 50px;
+}
+
+.table-section .header {
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  justify-content: space-around;
+  font-weight: 600;
+  text-transform: capitalize;
+  border-bottom: 1px solid;
+  padding-bottom: 10px;
+  font-size: 18px;
+}
+
+/* table body */
+.table-section .body {
+  text-transform: capitalize;
+}
+.table-section .body > li {
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid #bfbbbb;
+  align-items: center;
+  line-height: 30px;
+  height: 100px;
+}
+.table-section .body select {
+  padding: 8px;
+  border: 1px solid #7642d5;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.header-cell,
+.body-cell {
+  width: 550px;
+  /* height: 50px; */
+  text-align: center;
+}
+.body-cell button {
+  background-color: #7642d5;
+  padding: 8px;
+  width: 80px;
+  color: #ffffff;
+  border-radius: 8px;
+  border: 0;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+  .table-section .body select {
+    padding: 2px;
+  }
+
+  .body-cell button {
+    width: 50px;
+  }
+  .table-section .header, .table-section .body {
+    font-size: 12px;
+  }
+
+  .header-cell,
+  .body-cell {
+    width: 50px;
+  }
 }
